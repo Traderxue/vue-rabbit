@@ -1,6 +1,5 @@
 <template>
-  <el-button type="primary">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
+  <RouterView/>
 </template>
 
 <script>
