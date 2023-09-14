@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from './router'
 
 import "@/styles/common.scss"
-import { useIntersectionObserver } from '@vueuse/core'
+import {lazyPlugin} from "@/directives/index.js"
 
 
 //测试接口
@@ -19,21 +19,9 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(lazyPlugin)
 
 app.mount('#app')
 
 //定义全局指令，实现图片懒加载
-app.directive('img-lazy',{
-    mounted(el,binding){
-        // el:指令绑定的元素,binging.balue 指令等于号后面绑定的值 图片的url
-        useIntersectionObserver(
-            el,
-            ([{ isIntersecting }],) => {
-                if(isIntersecting){
-                    //进入了视图区域
-                    el.src=binding.value
-                }
-            },
-          )
-    }
-})
+
