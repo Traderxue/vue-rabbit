@@ -2,7 +2,7 @@ import http from '@/utils/http.js'
 
 export function getBannerApi(){
     return http({
-        url:"home/banner"
+        url:"/home/banner"
     })
 }
 
@@ -14,6 +14,12 @@ export const findNewApi =()=>{
 
 export const getHotApi =()=>{
     return http({
-        url:"home/hot"
+        url:"/home/hot"
+    })
+}
+
+export const getGoodsApi=()=>{
+    return http({
+        url:"/home/goods"
     })
 }

@@ -14,7 +14,7 @@ export const lazyPlugin = {
                             el.src=binding.value
                             //停止监听
                             stop()
-                        }
+                         }
                     },
                   )
             }
