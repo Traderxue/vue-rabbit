@@ -11,10 +11,15 @@ export const useUserStore = defineStore('user',()=>{
        userInfo.value = res.result
     }
 
+    const clearUserInfo = ()=>{
+        userInfo.value = {}
+    }
+
     //把state和action返回
     return{
         userInfo,
-        getUserInfo
+        getUserInfo,
+        clearUserInfo
     }
 },{
     persist:true        //需要持久化存储
