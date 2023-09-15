@@ -8,6 +8,10 @@ import router from './router'
 import "@/styles/common.scss"
 import {lazyPlugin} from "@/directives/index.js"
 
+//引入全局注册组件
+import {componentPlugin} from "@/components/"
+
+
 
 //测试接口
 // import {getCategpry} from '@/apis/testApi.js'
@@ -20,6 +24,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(lazyPlugin)
+app.use(componentPlugin)
 
 app.mount('#app')
 
