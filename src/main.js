@@ -1,6 +1,5 @@
 
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
@@ -11,17 +10,15 @@ import {lazyPlugin} from "@/directives/index.js"
 //引入全局注册组件
 import {componentPlugin} from "@/components/"
 
+import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
-
-//测试接口
-// import {getCategpry} from '@/apis/testApi.js'
-// getCategpry().then(res=>{
-//     console.log(res)
-// })
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
 
 const app = createApp(App)
 
-app.use(createPinia())
+app.use(pinia)
 app.use(router)
 app.use(lazyPlugin)
 app.use(componentPlugin)

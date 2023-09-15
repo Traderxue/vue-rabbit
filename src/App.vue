@@ -1,5 +1,4 @@
 <template>
-  <div class="test">dasdas</div>
   <RouterView/>
 </template>
 
@@ -10,9 +9,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- .test{
-    color: $priceColor;
-  }
-
+ 
 </style>
  
